@@ -1,0 +1,57 @@
+/* ===== Pulsar - estilos globais ===== */
+:root{--c1:#6c2bd9;--c2:#ff3d81;--c3:#ffb800;--bg:#f6f4fb;--txt:#1d1b2b;--card:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5}
+a{color:inherit;text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:24px 16px}
+
+/* Cabeçalho + menu (sticky: sempre acessível) */
+.header{background:linear-gradient(90deg,var(--c1),var(--c2));color:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px rgba(0,0,0,.2)}
+.header-in{max-width:1100px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1.7rem;font-weight:800;letter-spacing:-1px}
+.logo span{color:var(--c3)}
+.menu{display:flex;flex-wrap:wrap;gap:4px;max-width:1100px;margin:0 auto;padding:0 16px 10px}
+.menu a{padding:6px 12px;border-radius:20px;font-size:.9rem;font-weight:600;transition:.25s}
+.menu a:hover{background:rgba(255,255,255,.25);transform:translateY(-2px)}
+.menu a.ativo{background:#fff;color:var(--c1)}
+.btn-cad{background:var(--c3);color:#1d1b2b;padding:8px 18px;border-radius:20px;font-weight:700;transition:.25s}
+.btn-cad:hover{transform:scale(1.06)}
+
+/* Títulos e grids */
+h1.titulo{font-size:2rem;margin-bottom:6px}
+.sub{color:#6b6880;margin-bottom:20px}
+h2.secao{margin:32px 0 14px;border-left:6px solid var(--c2);padding-left:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.destaques{display:grid;grid-template-columns:2fr 1fr;gap:18px}
+.destaques .lado{display:grid;gap:18px}
+
+/* Cards de notícia */
+.card{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08);transition:.3s;display:block}
+.card:hover{transform:translateY(-6px);box-shadow:0 10px 24px rgba(108,43,217,.25)}
+.img{height:140px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;color:#fff}
+.grande .img{height:260px;font-size:6rem}
+.card-body{padding:14px}
+.tag{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;color:#fff;padding:2px 10px;border-radius:12px;margin-bottom:6px}
+.card h3{font-size:1.05rem;margin-bottom:6px}
+.card p{font-size:.88rem;color:#555}
+.hora{font-size:.75rem;color:#999;margin-top:8px}
+
+/* Formulário */
+form{background:var(--card);max-width:560px;padding:24px;border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+label{display:block;font-weight:600;margin:14px 0 4px}
+input,textarea{width:100%;padding:10px;border:2px solid #ddd;border-radius:8px;font:inherit;transition:.2s}
+input:focus,textarea:focus{outline:none;border-color:var(--c1)}
+.erro{color:#d6204f;font-size:.8rem;min-height:1em}
+.invalido{border-color:#d6204f}
+button.enviar{margin-top:18px;background:linear-gradient(90deg,var(--c1),var(--c2));color:#fff;border:0;padding:12px 28px;border-radius:24px;font-weight:700;cursor:pointer;transition:.25s}
+button.enviar:hover{transform:scale(1.05)}
+.sucesso{background:#d9f7e4;color:#106a37;padding:12px;border-radius:8px;margin-top:16px;display:none}
+
+.footer{background:#1d1b2b;color:#bbb;text-align:center;padding:24px 16px;margin-top:40px;font-size:.85rem}
+.footer a{color:var(--c3);margin:0 6px}
+@media(max-width:760px){.destaques{grid-template-columns:1fr}}
+
+/* Foto cobrindo toda a área da imagem do card */
+.img{position:relative;overflow:hidden}
+.img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.card:hover .img img{transform:scale(1.08)}   /* zoom suave no hover */
